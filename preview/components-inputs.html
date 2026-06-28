@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"><style>
+.field { display:flex; flex-direction:column; gap:6px; flex:1; }
+.field label { font-family:Inter; font-weight:500; font-size:12px; color:#0F1032; }
+.field input, .field select { font-family:Inter; font-weight:400; font-size:14px; padding:10px 12px; border-radius:8px; border:1px solid #DBE2EC; background:#fff; color:#0F1032; outline:none; transition:border-color 120ms, box-shadow 120ms; }
+.field input:focus, .field select:focus { border-color:#045AD6; box-shadow:0 0 0 3px rgba(4,90,214,0.18); }
+.field-err input { border-color:#E5484D; }
+.field-err .msg { font-family:Inter; font-size:11px; color:#E5484D; }
+</style></head><body><div class="card" style="padding:28px">
+<div class="tag">FORM FIELDS</div>
+<div style="display:flex;gap:14px;margin-top:14px">
+  <div class="field"><label>Vessel name</label><input value="Stella Maris"></div>
+  <div class="field"><label>Hull length</label><input placeholder="e.g. 38 ft"></div>
+</div>
+<div style="display:flex;gap:14px;margin-top:14px">
+  <div class="field"><label>System</label><select><option>Navigation suite</option><option>Lighting harness</option><option>Audio + entertainment</option></select></div>
+  <div class="field field-err"><label>Email</label><input value="captain@stell"><div class="msg">Enter a complete email address.</div></div>
+</div>
+</div></body></html>

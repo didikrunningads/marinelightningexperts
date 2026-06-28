@@ -1,0 +1,374 @@
+/* =========================================================================
+   Shiptronics Design System — Colors & Typography
+   ========================================================================= */
+
+/* ---------- Webfonts ---------------------------------------------------- */
+
+@font-face { font-family: "Inter"; font-weight: 300; font-style: normal;
+  src: url("./fonts/Inter-Light.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Inter"; font-weight: 400; font-style: normal;
+  src: url("./fonts/Inter-Regular.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Inter"; font-weight: 500; font-style: normal;
+  src: url("./fonts/Inter-Medium.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Inter"; font-weight: 600; font-style: normal;
+  src: url("./fonts/Inter-SemiBold.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Inter"; font-weight: 700; font-style: normal;
+  src: url("./fonts/Inter-Bold.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Inter"; font-weight: 800; font-style: normal;
+  src: url("./fonts/Inter-ExtraBold.ttf") format("truetype"); font-display: swap; }
+
+@font-face { font-family: "Barlow"; font-weight: 300; font-style: normal;
+  src: url("./fonts/Barlow-Light.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Barlow"; font-weight: 300; font-style: italic;
+  src: url("./fonts/Barlow-LightItalic.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Barlow"; font-weight: 400; font-style: normal;
+  src: url("./fonts/Barlow-Regular.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Barlow"; font-weight: 400; font-style: italic;
+  src: url("./fonts/Barlow-Italic.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Barlow"; font-weight: 500; font-style: normal;
+  src: url("./fonts/Barlow-Medium.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Barlow"; font-weight: 500; font-style: italic;
+  src: url("./fonts/Barlow-MediumItalic.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Barlow"; font-weight: 600; font-style: normal;
+  src: url("./fonts/Barlow-SemiBold.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Barlow"; font-weight: 600; font-style: italic;
+  src: url("./fonts/Barlow-SemiBoldItalic.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Barlow"; font-weight: 700; font-style: normal;
+  src: url("./fonts/Barlow-Bold.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Barlow"; font-weight: 700; font-style: italic;
+  src: url("./fonts/Barlow-BoldItalic.ttf") format("truetype"); font-display: swap; }
+
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-style: normal;
+  src: url("./fonts/BarlowCondensed-Bold.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-style: italic;
+  src: url("./fonts/BarlowCondensed-BoldItalic.ttf") format("truetype"); font-display: swap; }
+
+/* ---------- Tokens ------------------------------------------------------ */
+
+:root {
+  /* Brand core (from logo improvement spec, April 2025) */
+  --st-electric:    #00B3FD;   /* electric cyan-blue, accent + highlight */
+  --st-cobalt:      #045AD6;   /* primary action, link, brand blue */
+  --st-cobalt-deep: #035BD7;   /* exact spec hex from PDF; near-twin to cobalt */
+  --st-midnight:    #0F1032;   /* deep navy — surfaces, headlines on light */
+  --st-white:       #FFFFFF;
+
+  /* Tints + shades — derived for hover/press/borders */
+  --st-electric-50:  #E5F7FF;
+  --st-electric-100: #BFEBFF;
+  --st-electric-200: #80D8FF;
+  --st-electric-500: #00B3FD;
+  --st-electric-600: #0098D6;
+  --st-electric-700: #0079AB;
+
+  --st-cobalt-50:   #E6EFFB;
+  --st-cobalt-100:  #BFD4F4;
+  --st-cobalt-200:  #80A9E9;
+  --st-cobalt-500:  #045AD6;
+  --st-cobalt-600:  #0349B0;
+  --st-cobalt-700:  #023889;
+
+  --st-midnight-50:  #E7E7EC;
+  --st-midnight-100: #C1C1CC;
+  --st-midnight-200: #898998;
+  --st-midnight-500: #0F1032;
+  --st-midnight-700: #08081B;
+  --st-midnight-900: #050513;
+
+  /* Neutrals — cool grays tuned to the navy */
+  --st-gray-0:   #FFFFFF;
+  --st-gray-50:  #F6F8FB;
+  --st-gray-100: #EDF1F6;
+  --st-gray-200: #DBE2EC;
+  --st-gray-300: #BCC6D4;
+  --st-gray-400: #8A95A6;
+  --st-gray-500: #5C6678;
+  --st-gray-600: #3E4756;
+  --st-gray-700: #262C38;
+  --st-gray-800: #161A23;
+  --st-gray-900: #0F1032;
+
+  /* Semantic — status */
+  --st-success: #16A36A;
+  --st-warning: #F5A524;
+  --st-danger:  #E5484D;
+  --st-info:    var(--st-electric);
+
+  /* Semantic — surface / foreground (light theme default) */
+  --st-bg:        var(--st-gray-0);
+  --st-bg-subtle: var(--st-gray-50);
+  --st-bg-muted:  var(--st-gray-100);
+  --st-surface:   var(--st-gray-0);
+  --st-surface-elevated: var(--st-gray-0);
+
+  --st-fg:        var(--st-midnight);     /* primary text */
+  --st-fg-muted:  var(--st-gray-500);     /* secondary text */
+  --st-fg-subtle: var(--st-gray-400);     /* tertiary, captions */
+  --st-fg-onbrand: var(--st-white);
+  --st-fg-link:   var(--st-cobalt);
+
+  --st-border:        var(--st-gray-200);
+  --st-border-strong: var(--st-gray-300);
+  --st-border-brand:  var(--st-cobalt);
+
+  /* Brand gradients — lifted from logo-on-dark treatment */
+  --st-gradient-brand: linear-gradient(135deg, #00B3FD 0%, #045AD6 100%);
+  --st-gradient-night: linear-gradient(180deg, #0F1032 0%, #050513 100%);
+  --st-gradient-sky:   linear-gradient(180deg, #E5F7FF 0%, #FFFFFF 100%);
+
+  /* ---------- Type families ------------------------------------------- */
+  --st-font-display: "Barlow Condensed", "Barlow", "Inter", system-ui, sans-serif;
+  --st-font-heading: "Barlow", "Inter", system-ui, sans-serif;
+  --st-font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --st-font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* ---------- Type scale (modular ~1.250) ------------------------------ */
+  --st-text-2xs: 11px;
+  --st-text-xs:  12px;
+  --st-text-sm:  14px;
+  --st-text-md:  16px;   /* body default */
+  --st-text-lg:  18px;
+  --st-text-xl:  20px;
+  --st-text-2xl: 24px;
+  --st-text-3xl: 30px;
+  --st-text-4xl: 38px;
+  --st-text-5xl: 48px;
+  --st-text-6xl: 64px;
+  --st-text-7xl: 84px;
+  --st-text-8xl: 112px;
+
+  /* ---------- Spacing (4px base) -------------------------------------- */
+  --st-space-0:  0;
+  --st-space-1:  4px;
+  --st-space-2:  8px;
+  --st-space-3:  12px;
+  --st-space-4:  16px;
+  --st-space-5:  20px;
+  --st-space-6:  24px;
+  --st-space-8:  32px;
+  --st-space-10: 40px;
+  --st-space-12: 48px;
+  --st-space-16: 64px;
+  --st-space-20: 80px;
+  --st-space-24: 96px;
+  --st-space-32: 128px;
+
+  /* ---------- Radius -------------------------------------------------- */
+  --st-radius-xs:   2px;
+  --st-radius-sm:   4px;
+  --st-radius-md:   8px;
+  --st-radius-lg:   12px;
+  --st-radius-xl:   16px;
+  --st-radius-2xl:  24px;
+  --st-radius-pill: 999px;
+
+  /* ---------- Shadow / elevation -------------------------------------- */
+  --st-shadow-xs: 0 1px 2px 0 rgba(15, 16, 50, 0.06);
+  --st-shadow-sm: 0 1px 3px 0 rgba(15, 16, 50, 0.08), 0 1px 2px 0 rgba(15, 16, 50, 0.04);
+  --st-shadow-md: 0 4px 8px -2px rgba(15, 16, 50, 0.10), 0 2px 4px -2px rgba(15, 16, 50, 0.06);
+  --st-shadow-lg: 0 12px 24px -6px rgba(15, 16, 50, 0.14), 0 4px 8px -2px rgba(15, 16, 50, 0.06);
+  --st-shadow-xl: 0 24px 48px -12px rgba(15, 16, 50, 0.22);
+  /* Brand glow — used sparingly on cobalt CTAs and the logo on dark */
+  --st-shadow-glow: 0 0 0 4px rgba(0, 179, 253, 0.20),
+                    0 8px 24px -4px rgba(4, 90, 214, 0.40);
+  --st-shadow-inner: inset 0 1px 2px rgba(15, 16, 50, 0.10);
+
+  /* ---------- Motion -------------------------------------------------- */
+  --st-ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+  --st-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --st-dur-fast: 120ms;
+  --st-dur-base: 200ms;
+  --st-dur-slow: 320ms;
+
+  /* ---------- Layout -------------------------------------------------- */
+  --st-container: 1200px;
+  --st-container-narrow: 880px;
+}
+
+/* ---------- Dark theme (auto + class-overridable) ----------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --st-bg:        var(--st-midnight);
+    --st-bg-subtle: var(--st-midnight-700);
+    --st-bg-muted:  var(--st-gray-800);
+    --st-surface:   var(--st-gray-800);
+    --st-surface-elevated: var(--st-gray-700);
+
+    --st-fg:        var(--st-white);
+    --st-fg-muted:  var(--st-gray-300);
+    --st-fg-subtle: var(--st-gray-400);
+    --st-fg-link:   var(--st-electric);
+
+    --st-border:        rgba(255,255,255,0.10);
+    --st-border-strong: rgba(255,255,255,0.18);
+  }
+}
+[data-theme="dark"] {
+  --st-bg:        var(--st-midnight);
+  --st-bg-subtle: var(--st-midnight-700);
+  --st-bg-muted:  var(--st-gray-800);
+  --st-surface:   var(--st-gray-800);
+  --st-surface-elevated: var(--st-gray-700);
+  --st-fg:        var(--st-white);
+  --st-fg-muted:  var(--st-gray-300);
+  --st-fg-subtle: var(--st-gray-400);
+  --st-fg-link:   var(--st-electric);
+  --st-border:        rgba(255,255,255,0.10);
+  --st-border-strong: rgba(255,255,255,0.18);
+}
+
+/* =========================================================================
+   Semantic typography classes — drop-in replacements for h1, h2, p, etc.
+   ========================================================================= */
+
+.st-display,
+.st-h-hero {
+  font-family: var(--st-font-display);
+  font-weight: 700;
+  font-size: clamp(48px, 7vw, var(--st-text-8xl));
+  line-height: 0.92;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--st-fg);
+}
+
+.st-h1 {
+  font-family: var(--st-font-display);
+  font-weight: 700;
+  font-size: var(--st-text-6xl);
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--st-fg);
+}
+
+.st-h2 {
+  font-family: var(--st-font-display);
+  font-weight: 700;
+  font-size: var(--st-text-5xl);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--st-fg);
+}
+
+.st-h3 {
+  font-family: var(--st-font-display);
+  font-weight: 700;
+  font-size: var(--st-text-4xl);
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--st-fg);
+}
+
+.st-h4 {
+  font-family: var(--st-font-heading);
+  font-weight: 600;
+  font-size: var(--st-text-2xl);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--st-fg);
+}
+
+.st-h5 {
+  font-family: var(--st-font-heading);
+  font-weight: 600;
+  font-size: var(--st-text-xl);
+  line-height: 1.25;
+  color: var(--st-fg);
+}
+
+.st-eyebrow {
+  font-family: var(--st-font-body);
+  font-weight: 600;
+  font-size: var(--st-text-xs);
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--st-cobalt);
+}
+
+.st-lede {
+  font-family: var(--st-font-body);
+  font-weight: 400;
+  font-size: var(--st-text-xl);
+  line-height: 1.5;
+  color: var(--st-fg-muted);
+  text-wrap: pretty;
+}
+
+.st-p,
+.st-body {
+  font-family: var(--st-font-body);
+  font-weight: 400;
+  font-size: var(--st-text-md);
+  line-height: 1.6;
+  color: var(--st-fg);
+  text-wrap: pretty;
+}
+
+.st-small {
+  font-family: var(--st-font-body);
+  font-weight: 400;
+  font-size: var(--st-text-sm);
+  line-height: 1.5;
+  color: var(--st-fg-muted);
+}
+
+.st-caption {
+  font-family: var(--st-font-body);
+  font-weight: 500;
+  font-size: var(--st-text-xs);
+  line-height: 1.4;
+  color: var(--st-fg-subtle);
+}
+
+.st-label {
+  font-family: var(--st-font-body);
+  font-weight: 500;
+  font-size: var(--st-text-sm);
+  line-height: 1.2;
+  color: var(--st-fg);
+}
+
+.st-mono,
+.st-code {
+  font-family: var(--st-font-mono);
+  font-size: 0.95em;
+  background: var(--st-bg-muted);
+  padding: 0.1em 0.35em;
+  border-radius: var(--st-radius-sm);
+  color: var(--st-fg);
+}
+
+a.st-link, .st-link {
+  color: var(--st-fg-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color var(--st-dur-fast) var(--st-ease-out);
+}
+a.st-link:hover, .st-link:hover { color: var(--st-cobalt-700); }
+
+/* Element fallbacks if you scope `.st-prose` */
+.st-prose h1 { @apply: var(--st-h1); }
+.st-prose h1, .st-prose h2, .st-prose h3 {
+  font-family: var(--st-font-display);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--st-fg);
+}
+.st-prose h1 { font-size: var(--st-text-6xl); line-height: 0.95; margin: 0 0 24px; }
+.st-prose h2 { font-size: var(--st-text-5xl); line-height: 1;    margin: 48px 0 20px; }
+.st-prose h3 { font-size: var(--st-text-4xl); line-height: 1.05; margin: 40px 0 16px; }
+.st-prose h4 { font-family: var(--st-font-heading); font-weight: 600; font-size: var(--st-text-2xl); margin: 32px 0 12px; }
+.st-prose p, .st-prose li {
+  font-family: var(--st-font-body); font-size: var(--st-text-md);
+  line-height: 1.65; color: var(--st-fg); text-wrap: pretty;
+}
+.st-prose strong { font-weight: 600; color: var(--st-fg); }
+.st-prose em { font-style: italic; }
+.st-prose code {
+  font-family: var(--st-font-mono); font-size: 0.92em;
+  background: var(--st-bg-muted); padding: 0.1em 0.35em;
+  border-radius: var(--st-radius-sm);
+}
